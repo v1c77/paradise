@@ -21,10 +21,6 @@ if sys.argv[-1] == "publish":
     os.system("python setup.py sdist bdist_wheel upload")
     sys.exit()
 
-required = [
-    'gpiozero',
-    'pip'
-]
 
 # if sys.version_info < (2, 7):
 #     required.append('requests[security]')
@@ -42,14 +38,12 @@ setup(
     entry_points={
         'console_scripts': ['pihomeiot=pihomeiot:cli'],
     },
-    install_requires=required,
+    install_requires=open('requirements.txt').readlines(),
     include_package_data=True,
     license='MIT',
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6'
+        'Programming Language :: Python :: 3.5'
     ],
 )
