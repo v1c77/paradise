@@ -11,7 +11,7 @@ from gpiozero import (
 if __name__ == '__main__':
 
     button = Button(27)
-    button.wait_for_active()
+    button.wait_for_inactive()
     print("wait for you.")
 
 
