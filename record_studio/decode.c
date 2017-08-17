@@ -2,15 +2,16 @@
 #include <string.h>
 #include <stdio.h>
 
-#define SHORT 440
-#define LONG 1280
-#define MARGIN 150
-#define INTRO 3500
-#define INTRO2 1750
-#define SEPARATOR 9880
+#define SHORT       880
+#define LONG        2590
+#define MARGIN      150
+#define INTRO       3500
+#define INTRO2      1750
+#define SEPARATOR   13900
 
 
-char decode(int val1, int val2){
+char
+decode(int val1, int val2){
 	if (abs(val1 - INTRO) < MARGIN && abs(val2 - INTRO2) < MARGIN)
 		return '[';
 	if (abs(val1 - SHORT) < MARGIN && abs(val2 - SHORT) < MARGIN)
@@ -21,14 +22,16 @@ char decode(int val1, int val2){
 		return ']';	
 }
 
-int abs(int val){
+int
+abs(int val){
 	if (val < 0)
 		return -val;
 	else
 		return val;
 }
 
-int main(int argc, char** argv){
+int
+main(int argc, char** argv){
 	if (argc < 3){
 		printf("usage = %s fileName output\n", argv[0]);
 		exit(0);
