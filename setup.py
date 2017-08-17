@@ -14,7 +14,7 @@ with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 about = {}
-with open(os.path.join(here, "pihomeiot", "__version__.py")) as f:
+with open(os.path.join(here, "core", "__version__.py")) as f:
     exec(f.read(), about)
 
 if sys.argv[-1] == "publish":
@@ -44,6 +44,7 @@ setup(
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.5'
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
 )
